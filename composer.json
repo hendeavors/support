@@ -28,5 +28,9 @@
             "Endeavors\\Support\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
