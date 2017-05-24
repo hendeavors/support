@@ -4,6 +4,12 @@ namespace Tests\Endeavors\Support\Html;
 
 use Endeavors\Support\Html\HtmlTag;
 
+/**
+ * All tags are fairly common testing the strip of one tag will most likely work for another.
+ * All tags should still be tested.
+ * @todo test all tags
+ */
+
 class HtmlTagTest extends \Orchestra\Testbench\TestCase
 {
     public function testStripATags()
@@ -72,12 +78,16 @@ class HtmlTagTest extends \Orchestra\Testbench\TestCase
     {
         $contents = [
             'Before <a href="things" class="morethings" Test</a>',
-            'Before <ahref="things" class="morethings" Test</a>'
+            'Before <ahref="things" class="morethings" Test</a>',
+            'Before <center <center <center After',
+            'Before <center> <center <center After'
         ];
 
         $strippedContents = [
             'Before href="things" class="morethings" Test',
-            'Before href="things" class="morethings" Test'
+            'Before href="things" class="morethings" Test',
+            'Before After',
+            'Before After'
         ];
         
         $i = 0;

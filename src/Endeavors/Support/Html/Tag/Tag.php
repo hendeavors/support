@@ -6,7 +6,7 @@ use MabeEnum\Enum;
 
 /**
  * Represent Tags
- * Open tags may have attributes
+ * The enum ensures uniqueness
  */
 final class Tag extends Enum
 {
@@ -14,18 +14,28 @@ final class Tag extends Enum
     const aopen = "<a";
     const abbr = "<abbr";
     const address = "<address";
-    const area = "area";
+    const area = "<area";
     const articleopen = "<article";
     const asideopen = "<aside";
     const audioopen = "<audio";
     const bopen = "<b>";
     const base = "<base";
-    const bdiopen = "<bdi>";
+    const bdiopen = "<bdi>"; // html5
     const bdoopen = "<bdo";
     const blockquoteopen = "<blockquote";
     const bodyopen = "<body";
     const br = "<br";
     const buttonopen = "<button";
+    const canvasopen = "<canvas"; // html5
+    const centeropen = "<center";
+    const citeopen = "<cite";
+    const codeopen = "<code";
+    const col = "<col";
+    const colgroupopen = "<colgroup";
+    const datalistopen = "<datalist";
+    const ddopen = "<dd";
+    const delopen = "<del";
+    const detailopen = "<details";
     const spanopen = "<span";
     const strongopen = "<strong";
 
@@ -42,6 +52,15 @@ final class Tag extends Enum
     const blockquoteclosed = "</blockquote>";
     const bodyclosed = "</body>";
     const buttonclosed = "</button>";
+    const canvasclosed = "</canvas>";
+    const centerclosed = "</center>";
+    const citeclosed = "</cite>";
+    const codeclosed  = "</code>";
+    const colgroupclosed = "</colgroup>";
+    const datalistclosed = "</datalist>";
+    const ddclosed = "</dd>";
+    const delclosed = "</del>";
+    const detailclosed = "</details>";
     const spanclosed = "</span>";
     const strongclosed = "</strong>";
 }

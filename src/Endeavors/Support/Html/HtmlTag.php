@@ -7,6 +7,7 @@ class HtmlTag
     /**
      *
      * @todo refactor
+     * @todo test with large body of html
      */
     public static function strip($strcontent)
     {
@@ -32,25 +33,19 @@ class HtmlTag
             }
 
             // if the tag count greater than the closing tag count we have a broken/missing tag
-            if( $content->tagCount() > $j && $temp > 0) {
+            if( $content->tagCount() > $j && $temp > 0 || $temp == 0) {
+                
+                $tagPosition = $content->validTagPosition();
 
-                $openPosition = $content->validTagPosition();
+                $startPosition = $tagPosition + mb_strlen($content->tag()->getValue());
 
-                $length = $openPosition + mb_strlen($content->tag()->getValue());
+                $beforeText = substr($strcontent, 0, $tagPosition);
 
-                if( " " == $strcontent[$length] ) {
-                    $length = $length + 1;
-                }
+                $afterText = substr($strcontent, $startPosition);
 
-                $beforeText = substr($strcontent, 0, $openPosition);
-
-                $afterText = substr($strcontent, $length);
-
-                $newContent = $beforeText . $afterText; 
+                $newContent = trim($beforeText) . ' ' . trim($afterText);
             }
-            elseif( $temp == 0 ) {
-                $newContent = substr($strcontent, 0, $content->validTagPosition()) . substr($strcontent, $content->validTagPosition() + mb_strlen($content->tag()->getValue())+1, mb_strlen($strcontent));
-            } else {
+            else {
                 $newContent = substr($strcontent, 0, $content->validTagPosition()) . substr($strcontent, $temp+1, mb_strlen($strcontent));
             }
 
