@@ -35,7 +35,13 @@ final class Tag extends Enum
     const datalistopen = "<datalist";
     const ddopen = "<dd";
     const delopen = "<del";
-    const detailopen = "<details";
+    const detailsopen = "<details";
+    const dialogopen = "<dialog";
+    const dfnopen = "<dfn";
+    const diropen = "<dir";
+    const divopen = "<div";
+    const scriptopen = "<script";
+    const sectionopen = "<section";
     const spanopen = "<span";
     const strongopen = "<strong";
 
@@ -60,7 +66,13 @@ final class Tag extends Enum
     const datalistclosed = "</datalist>";
     const ddclosed = "</dd>";
     const delclosed = "</del>";
-    const detailclosed = "</details>";
+    const detailsclosed = "</details>";
+    const dfnclosed = "</dfn>";
+    const dialogclosed = "</dialog>";
+    const dirclosed = "</dir>";
+    const divclosed = "</div>";
+    const scriptclosed = "</script>";
+    const sectionclosed = "</section>";
     const spanclosed = "</span>";
     const strongclosed = "</strong>";
 }

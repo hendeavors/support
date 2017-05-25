@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Endeavors\Support\Html;
+namespace Endeavors\Support\Tests\Html;
 
 use Endeavors\Support\Html\Content;
 
